@@ -12,7 +12,7 @@ namespace SnakeLadder
 
             Random random = new Random();
             int dice1 = random.Next(1, 7);
-            Console.WriteLine(dice1);
+            Console.WriteLine("The number appeared on the die for player1: " +dice1);
         }
     }
 }
