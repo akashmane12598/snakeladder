@@ -11,8 +11,7 @@ namespace SnakeLadder
             int pos1 = 0;
 
             Random random = new Random();
-            int dice1 = random.Next(1, 7);
-            Console.WriteLine("The number appeared on the die for player1: " + dice1);
+            int dice1;
 
             const int no_play = 0;
             const int ladder = 1;
@@ -23,12 +22,26 @@ namespace SnakeLadder
 
             while (pos1 < winning_pos)
             {
+                dice1 = random.Next(1, 7);
+                Console.WriteLine("The number appeared on the die for player1: " + dice1);
                 mov1 = random.Next(0, 3);
+
                 if (mov1 == ladder)
                 {
                     Console.WriteLine("Player1 gets a Ladder");
                     pos1 += dice1;
                     attempt1++;
+                    while (pos1 > winning_pos)
+                    {
+                        pos1 -= winning_pos - dice1;
+                        int a = random.Next(1, 7);
+                        int lad1 = random.Next(0, 3);
+                        if (a == winning_pos - pos1 && lad1 == ladder)
+                        {
+                            pos1 += a;
+                        }
+                        attempt1++;
+                    }
                 }
                 else if (mov1 == snake)
                 {
