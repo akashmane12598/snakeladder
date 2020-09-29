@@ -17,24 +17,37 @@ namespace SnakeLadder
             const int no_play = 0;
             const int ladder = 1;
             const int snake = 2;
-
-            int mov1 = random.Next(0, 3);
+            const int winning_pos = 100;
             int attempt1 = 0;
-            if (mov1 == ladder)
+            int mov1;
+
+            while (pos1 < winning_pos)
             {
-                Console.WriteLine("Player1 gets a Ladder");
-                pos1 += dice1;
+                mov1 = random.Next(0, 3);
+                if (mov1 == ladder)
+                {
+                    Console.WriteLine("Player1 gets a Ladder");
+                    pos1 += dice1;
+                    attempt1++;
+                }
+                else if (mov1 == snake)
+                {
+                    Console.WriteLine("Player1 gets a Snake");
+                    pos1 -= dice1;
+                    if (pos1 < 0)
+                    {
+                        pos1 = 0;
+                    }
+                    attempt1++;
+                }
+                else
+                {
+                    Console.WriteLine("Player1 gets a No-Play");
+                    attempt1++;
+                }
+                
             }
-            else if(mov1 == snake)
-            {
-                Console.WriteLine("Player1 gets a Snake");
-                pos1 -= dice1;
-            }
-            else
-            {
-                Console.WriteLine("Player1 gets a No-Play");
-            }
-            attempt1++;
+            
             Console.WriteLine("Position of player1 after "+attempt1+" attempts: "+pos1);
         }
     }
