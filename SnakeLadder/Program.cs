@@ -9,6 +9,10 @@ namespace SnakeLadder
             Console.WriteLine("Welcome to Snake and Ladder Problem");
             Console.WriteLine("For Single Player");
             int pos1 = 0;
+
+            Random random = new Random();
+            int dice1 = random.Next(1, 7);
+            Console.WriteLine(dice1);
         }
     }
 }
