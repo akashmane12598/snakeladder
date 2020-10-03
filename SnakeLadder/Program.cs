@@ -59,8 +59,9 @@ namespace SnakeLadder
                             Console.WriteLine("The number appeared on the die for player1: " + dice1);
                             Console.WriteLine("Current position of Player1 in " + attempt1 + " attempts: " + pos1);
                             attempt1++;
-                            c++;
+                            
                         }
+                        c++;
                     }
                     if (pos1 == winning_pos)
                     {
@@ -130,8 +131,9 @@ namespace SnakeLadder
                             Console.WriteLine("The number appeared on the die for player2: " + dice2);
                             Console.WriteLine("Current position of Player2 in " + attempt2 + " attempts: " + pos2);
                             attempt2++;
-                            c++;
+                            
                         }
+                        c++;
                     }
                     if (pos2 == winning_pos)
                     {
